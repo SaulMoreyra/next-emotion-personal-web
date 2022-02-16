@@ -13,7 +13,6 @@ export const ThemeChangeContext = createContext({
 
 const ThemeProvider = ({ children }: Props) => {
   const [isDark, setDark] = useState(false);
-  console.log(isDark);
   const toggleMode = useCallback(() => {
     setDark((prevMode) => !prevMode);
   }, []);
