@@ -1,8 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import GlobalContainer from "../components/Containers/GlobalContainer";
-import { MainContainer } from "../components/Containers";
+import {
+  ContentContainer,
+  GlobalContainer,
+  MainContainer,
+} from "../components/Containers";
 import Header from "../components/Header";
+import Atom from "../components/Atom";
+import Presentation from "../components/Presentation";
 
 const Home: NextPage = () => {
   return (
@@ -13,11 +18,14 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <MainContainer>
+      <ContentContainer>
         <Header />
-        <main></main>
+        <MainContainer>
+          <Presentation />
+          <Atom />
+        </MainContainer>
         <footer></footer>
-      </MainContainer>
+      </ContentContainer>
     </GlobalContainer>
   );
 };

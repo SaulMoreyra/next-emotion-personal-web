@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 
-const GlobalContainer = styled.div(({ theme }) => ({
-  minHeight: "100vh",
-  margin: "0 auto",
-  maxWidth: theme.breakpoints.xl,
+const MainContainer = styled.div(({ theme }) => ({
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr 1fr",
+  padding: theme.spacing(0, 5),
+  overflow: "hidden",
 }));
 
-export default GlobalContainer;
+export default MainContainer;

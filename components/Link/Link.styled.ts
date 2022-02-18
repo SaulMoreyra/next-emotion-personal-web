@@ -11,11 +11,14 @@ type LinkStyledProps = {
   };
 export const LinkStyled = styled.a(({ theme, active }: LinkStyledProps) => ({
   ...(active ? { backgroundColor: theme?.primary.main } : {}),
-  textTransform: "uppercase",
+  display: "flex",
+  alignItems: "center",
+  height: theme?.spacing(6.5),
+  textTransform: "capitalize",
   outline: "none",
   cursor: "pointer",
   border: "2px solid transparent",
-  borderRadius: theme?.spacing(3),
+  borderRadius: theme?.spacing(4),
   padding: theme?.spacing(1.5, 3),
   fontSize: theme?.spacing(2),
   fontWeight: active ? 700 : 600,
@@ -30,4 +33,9 @@ export const LinkStyled = styled.a(({ theme, active }: LinkStyledProps) => ({
         : theme?.text.secondary
     }`,
   },
+}));
+
+export const SimpleLinkStyled = styled.a(({ theme }) => ({
+  textDecoration: "underline",
+  color: theme.isDark ? theme.primary.main : theme.primary.dark,
 }));

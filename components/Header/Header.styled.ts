@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const NavStyled = styled.nav(({ theme }) => ({
   display: "flex",
   justifyContent: "space-between",
-  padding: theme.spacing(3, 5),
+  padding: theme.spacing(0, 4),
 }));
 
 export const LinksContainerStyled = styled.div(({ theme }) => ({
@@ -11,7 +11,5 @@ export const LinksContainerStyled = styled.div(({ theme }) => ({
   alignContent: "center",
   alignItems: "center",
   justifyContent: "center",
-  "& > a:not(last-of-type)": {
-    marginRight: theme.spacing(1),
-  },
+  gap: theme.spacing(1),
 }));
