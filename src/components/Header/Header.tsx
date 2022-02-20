@@ -1,8 +1,8 @@
 import Logo from "components/Logo";
 import { NavStyled } from "./Header.styled";
 import useMediaQuery from "hooks/useMediaQuery";
-import HeaderWeb from "./HeaderWeb";
-import HeaderMobile from "./HeaderMobile";
+import HeaderWeb from "../HeaderWeb";
+import HeaderMobile from "../HeaderMobile";
 
 const Header = () => {
   const matchQuery = useMediaQuery("min-width", 960);
