@@ -1,7 +1,7 @@
 import "@fontsource/poppins";
-import "../styles/globals.css";
+import "../src/styles/globals.css";
 import type { AppProps } from "next/app";
-import ThemeProvider from "../providers/ThemeProvider";
+import ThemeProvider from "providers/ThemeProvider";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

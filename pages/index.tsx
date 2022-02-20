@@ -1,13 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import {
-  ContentContainer,
-  GlobalContainer,
-  MainContainer,
-} from "../components/Containers";
-import Header from "../components/Header";
-import Atom from "../components/Atom";
-import Presentation from "../components/Presentation";
+import { ContentContainer, GlobalContainer } from "components/Containers";
+import Header from "components/Header";
+import { HomeView } from "views";
 
 const Home: NextPage = () => {
   return (
@@ -20,10 +15,7 @@ const Home: NextPage = () => {
 
       <ContentContainer>
         <Header />
-        <MainContainer>
-          <Presentation />
-          <Atom />
-        </MainContainer>
+        <HomeView />
         <footer></footer>
       </ContentContainer>
     </GlobalContainer>
