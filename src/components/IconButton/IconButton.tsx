@@ -10,17 +10,23 @@ type Props = {
   icon: (iconProps: IconProps) => JSX.Element;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   type?: "primary" | "secondary";
+  circular?: boolean;
 };
 
-const IconButton = ({ onClick, icon: Component, type = "primary" }: Props) => {
+const IconButton = ({
+  onClick,
+  icon: Component,
+  type = "primary",
+  circular = false,
+}: Props) => {
   const theme = useTheme();
   const Button =
     type === "primary" ? IconButtonPrimaryStyled : IconButtonSecondaryStyled;
 
   return (
-    <Button onClick={onClick}>
+    <Button onClick={onClick} circular={circular}>
       <Component
-        color={theme.type === "dark" ? theme.primary.main : theme.grey}
+        color={theme.type === "dark" ? theme.primary.main : theme.black}
       />
     </Button>
   );

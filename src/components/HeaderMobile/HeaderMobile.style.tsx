@@ -8,6 +8,7 @@ export const LinksContainerStyled = styled.div(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
   gap: theme.spacing(1),
+  zIndex: 3,
 }));
 
 type SideBarType = {
@@ -18,21 +19,16 @@ type SideBarType = {
     open: boolean;
   };
 export const SideBarStyled = styled.div(({ theme, open }: SideBarType) => ({
-  zIndex: "1",
-  position: "absolute",
+  zIndex: 4,
+  position: "fixed",
   width: "300px",
   height: "100%",
   background: theme?.background,
   right: open ? 0 : "-330px",
   transition: "0.5s",
-  padding: theme?.spacing(0, 4),
   overflowX: "hidden",
-  WebkitBoxShadow: `-10px 0px 29px -14px ${
-    theme?.isDark ? theme.primary.main : theme?.black
-  }`,
-  boxShadow: ` -10px 0px 29px -14px ${
-    theme?.isDark ? theme?.white : theme?.black
-  }`,
+  webkitBoxShadow: `-10px 0px 29px -14px ${theme?.black}`,
+  boxShadow: ` -10px 0px 29px -14px ${theme?.black}`,
 }));
 
 export const SideContainerItemStyled = styled.div(({ theme }) => ({
@@ -45,5 +41,13 @@ export const SideContainerItemStyled = styled.div(({ theme }) => ({
 export const HeaderContainerStyled = styled(SideContainerItemStyled)(
   ({ theme }) => ({
     justifyContent: "space-between",
+    padding: theme?.spacing(0, 4),
+  })
+);
+
+export const LanguageContainer = styled(SideContainerItemStyled)(
+  ({ theme }) => ({
+    margin: theme.spacing(2, 0),
+    padding: theme?.spacing(0, 4),
   })
 );

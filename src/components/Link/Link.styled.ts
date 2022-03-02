@@ -21,7 +21,7 @@ export const LinkStyled = styled.a(({ theme, active }: LinkStyledProps) => ({
   borderRadius: theme?.spacing(4),
   padding: theme?.spacing(1.5, 3),
   fontSize: theme?.spacing(2),
-  fontWeight: active ? 700 : 600,
+  fontWeight: active ? 700 : 500,
   letterSpacing: 1.5,
   color: active ? theme?.black : theme?.text.secondary,
   "&:hover": {
@@ -37,5 +37,6 @@ export const LinkStyled = styled.a(({ theme, active }: LinkStyledProps) => ({
 
 export const SimpleLinkStyled = styled.a(({ theme }) => ({
   textDecoration: "underline",
-  color: theme.isDark ? theme.primary.main : theme.primary.dark,
+  cursor: "pointer",
+  color: theme.isDark ? theme.primary.main : theme.primary.darker,
 }));

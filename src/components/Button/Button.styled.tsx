@@ -21,7 +21,7 @@ export const PrimaryButtonStyled = styled(BaseButtonStyled)(({ theme }) => ({
   "&:hover": {
     opacity: 0.8,
   },
-  "& > svg": {
+  "& > svg > *": {
     fill: theme.isDark ? theme.black : theme.white,
   },
 }));

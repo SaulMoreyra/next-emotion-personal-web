@@ -1,14 +1,16 @@
 import Atom from "components/Atom";
-import MainContainer from "components/Containers/HomeContainer";
+import { AtomHomeContainer, HomeContainer } from "./HomeView.styled";
 import Presentation from "components/Presentation";
 import React from "react";
 
 const Home = () => {
   return (
-    <MainContainer>
+    <HomeContainer>
       <Presentation />
-      <Atom />
-    </MainContainer>
+      <AtomHomeContainer>
+        <Atom />
+      </AtomHomeContainer>
+    </HomeContainer>
   );
 };
 

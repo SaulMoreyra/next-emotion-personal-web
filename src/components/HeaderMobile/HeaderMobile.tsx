@@ -5,10 +5,11 @@ import {
   HeaderContainerStyled,
   LinksContainerStyled,
   SideBarStyled,
-  SideContainerItemStyled,
+  LanguageContainer,
 } from "./HeaderMobile.style";
 import ButtonTheme from "components/ButtonTheme";
 import Switch from "components/Switch";
+import LinkMobile from "components/LinkMobile";
 
 const HeaderMobile = () => {
   const [open, setOpen] = useState(false);
@@ -17,13 +18,6 @@ const HeaderMobile = () => {
   const handleLanguage = (selected: boolean) => {
     setLanguage(selected ? "en" : "es");
   };
-
-  useEffect(() => {
-    if (!document) return;
-    if (open) document.body.style.overflow = "hidden";
-  }, [open]);
-
-  console.log(language);
 
   return (
     <Fragment>
@@ -39,14 +33,19 @@ const HeaderMobile = () => {
           <IconButton onClick={handleOpen} type="secondary" icon={IconExit} />
           <ButtonTheme />
         </HeaderContainerStyled>
-        <SideContainerItemStyled>
+        <LanguageContainer>
           <Switch
             selected={language !== "es"}
             optionOne="English"
             optionTwo="Spanish"
             onClick={handleLanguage}
           />
-        </SideContainerItemStyled>
+        </LanguageContainer>
+        <LinkMobile active={true}>Inicio</LinkMobile>
+        <LinkMobile>Sobre mi</LinkMobile>
+        <LinkMobile>Experiencia</LinkMobile>
+        <LinkMobile>Portafolio</LinkMobile>
+        <LinkMobile>Contactame</LinkMobile>
       </SideBarStyled>
     </Fragment>
   );

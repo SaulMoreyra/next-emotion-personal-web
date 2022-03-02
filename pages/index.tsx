@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { ContentContainer, GlobalContainer } from "components/Containers";
 import Header from "components/Header";
-import { HomeView } from "views";
+import Views from "views";
 
 const Home: NextPage = () => {
   return (
@@ -13,10 +13,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
       <ContentContainer>
-        <Header />
-        <HomeView />
-        <footer></footer>
+        <Views />
       </ContentContainer>
     </GlobalContainer>
   );

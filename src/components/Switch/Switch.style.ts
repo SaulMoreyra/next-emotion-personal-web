@@ -18,6 +18,9 @@ export const SwitchContainer = styled.div(({ theme }) => ({
   backgroundColor: theme.primary.main,
   height: "100%",
   cursor: "pointer",
+  "&:hover": {
+    backgroundColor: theme.primary.dark,
+  },
 }));
 
 type LabelType = {
@@ -52,5 +55,5 @@ export const Slider = styled.div(({ theme, selected }: SliderType) => ({
   width: "50%",
   backgroundColor: theme?.background,
   transition: ".4s",
-  border: `2px solid ${theme?.isDark ? theme.primary.main : theme?.background}`,
+  border: `5px solid ${theme?.primary.main}`,
 }));

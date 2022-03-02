@@ -15,7 +15,7 @@ export const MainText = styled(BaseText)(({ theme }) => ({
 }));
 
 export const SecondaryText = styled(BaseText)(({ theme }) => ({
-  color: theme.isDark ? theme.primary.main : theme.primary.dark,
+  color: theme.isDark ? theme.primary.main : theme.primary.darker,
   marginTop: -5,
 }));
 

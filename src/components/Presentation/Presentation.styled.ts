@@ -5,6 +5,10 @@ export const ContainerStyled = styled.div(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   width: "100%",
+  "@media (max-width: 960px)": {
+    flexDirection: "column",
+    justifyContent: "center",
+  },
 }));
 
 export const BaseContainer = styled.div(({ theme }) => ({
@@ -12,48 +16,38 @@ export const BaseContainer = styled.div(({ theme }) => ({
   flexDirection: "column",
   justifyContent: "center",
   gap: 20,
+  "@media (max-width: 960px)": {
+    padding: theme.spacing(0, 2),
+  },
+}));
+
+export const IconsContainer = styled(BaseContainer)(() => ({
+  "@media (max-width: 960px)": {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+  },
 }));
 
 export const TextContainer = styled(BaseContainer)(({ theme }) => ({
-  padding: theme.spacing(0, 4),
-}));
-
-export const Greeting = styled.h1(({ theme }) => ({
-  color: theme.isDark ? theme.white : theme.black,
-  fontWeight: 800,
-  letterSpacing: 2,
-  margin: 0,
-  fontSize: theme.spacing(5),
-  marginBottom: theme.spacing(-4),
-}));
-
-export const Profession = styled.h2(({ theme }) => ({
-  color: theme.isDark ? theme.ligthGrey : theme.grey,
-  fontWeight: 700,
-  margin: 0,
-  fontSize: theme.spacing(4),
-}));
-
-export const GeneralText = styled.p(({ theme }) => ({
-  color: theme.isDark ? theme.white : theme.grey,
-  fontSize: theme.spacing(3),
-  margin: 0,
-  "&:first-of-type": {
-    marginTop: theme.spacing(3),
+  padding: theme.spacing(2, 4),
+  "@media (max-width: 960px)": {
+    padding: theme.spacing(2, 2),
+  },
+  "& > h2:nth-of-type(1)": {
+    marginTop: theme.spacing(-4),
+    marginBottom: theme.spacing(4),
+    "@media (max-width: 960px)": {
+      marginBottom: theme.spacing(1),
+    },
   },
 }));
 
-export const IconContainer = styled.a(({ theme }) => ({
-  border: `2px solid ${theme.isDark ? theme.primary.main : theme.white}`,
-  display: "flex",
-  padding: theme.spacing(0.5),
-  borderRadius: theme.spacing(1),
-  cursor: "pointer",
-  "&:hover": {
-    opacity: 0.7,
-  },
-}));
-
-export const ButtonContainer = styled.a(({ theme }) => ({
+export const ButtonContainer = styled.div(({ theme }) => ({
   marginTop: theme.spacing(3),
+  display: "flex",
+  gap: theme.spacing(3),
+  "@media (max-width: 960px)": {
+    position: "absolute",
+    bottom: 100,
+  },
 }));

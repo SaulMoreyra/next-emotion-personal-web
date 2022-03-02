@@ -1,24 +1,23 @@
+import React from "react";
 import { useTheme } from "@emotion/react";
-import React, { Fragment } from "react";
 import {
-  IconArrow,
+  IconArrowNext,
+  IconArrowDown,
   IconFacebook,
   IconGithub,
   IconInstagram,
   IconLinkedin,
 } from "../Icons";
 import Button from "../Button";
-import { SimpleLink } from "../Link";
 import {
   ContainerStyled,
-  BaseContainer,
-  Greeting,
   TextContainer,
-  Profession,
-  GeneralText,
-  IconContainer,
   ButtonContainer,
+  IconsContainer,
 } from "./Presentation.styled";
+import Text from "components/Text";
+import IconButton from "components/IconButton";
+import IconLink from "components/IconLink";
 
 const icons = [
   { href: "https://www.facebook.com/saulrmoreyra/", icon: IconFacebook },
@@ -28,34 +27,35 @@ const icons = [
 ];
 
 const Presentation = () => {
-  const theme = useTheme();
-  const color = theme.isDark ? theme.primary.main : theme.black;
-
   return (
     <ContainerStyled>
-      <BaseContainer>
+      <IconsContainer>
         {icons.map(({ href, icon: Icon }, index) => (
-          <IconContainer
+          <IconLink
             key={`icon-container-${index}`}
             href={href}
             target="_blank"
-          >
-            <Icon color={color} />
-          </IconContainer>
+            icon={Icon}
+          />
         ))}
-      </BaseContainer>
+      </IconsContainer>
       <TextContainer>
-        <Greeting>¡Hola! Soy Saúl Moreyra</Greeting>
-        <Profession>Fullstack Developer</Profession>
-        <GeneralText>Oaxaca, México</GeneralText>
-        <GeneralText>Soy Ingeniero en Sistemas Computacionales.</GeneralText>
-        <GeneralText>
-          Si estas buscando alguién con quien codear yo soy el indicado!.
-        </GeneralText>
+        <Text variant="title">¡Hola! Soy Saúl Moreyra</Text>
+        <Text variant="subtitle">Fullstack Developer</Text>
+        <Text variant="body">Oaxaca, México</Text>
+        <Text variant="body">
+          Soy Ingeniero en Sistemas Computacionales, egresado del TecNM Campus
+          Oaxaca.
+        </Text>
+        <Text variant="body">
+          No me gusta trabajar solo, si estas buscando alguién con quien codear
+          yo soy el indicado!.
+        </Text>
         <ButtonContainer>
-          <Button type="primary" endIcon={IconArrow}>
+          <Button type="primary" endIcon={IconArrowNext}>
             Contáctame
           </Button>
+          <IconButton icon={IconArrowDown} circular />
         </ButtonContainer>
       </TextContainer>
     </ContainerStyled>
