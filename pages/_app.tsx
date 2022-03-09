@@ -1,13 +1,13 @@
 import "@fontsource/poppins";
 import "../src/styles/globals.css";
 import type { AppProps } from "next/app";
-import ThemeProvider from "providers/ThemeProvider";
+import Providers from "providers";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThemeProvider>
+    <Providers>
       <Component {...pageProps} />
-    </ThemeProvider>
+    </Providers>
   );
 }
 

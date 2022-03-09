@@ -1,15 +1,27 @@
 import ButtonTheme from "components/ButtonTheme";
 import Link from "components/Link";
+import useMenu from "hooks/useMenu";
+import { useCallback } from "react";
 import { LinksContainerStyled } from "./HeaderWeb.styled";
 
 const HeaderWeb = () => {
+  const menu = useMenu();
+
+  const handleOnClick = useCallback((index: number) => {
+    menu.set(index);
+  }, []);
+
   return (
     <LinksContainerStyled>
-      <Link active={true}>Inicio</Link>
-      <Link>Sobre mi</Link>
-      <Link>Experiencia</Link>
-      <Link>Portafolio</Link>
-      <Link>Contactame</Link>
+      {menu.items.map((item, index) => (
+        <Link
+          key={`menu_mobile-${index}`}
+          active={index === menu.active}
+          onClick={() => handleOnClick(index)}
+        >
+          {item}
+        </Link>
+      ))}
       <ButtonTheme />
     </LinksContainerStyled>
   );

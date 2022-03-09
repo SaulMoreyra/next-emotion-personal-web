@@ -1,14 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 import HomeView from "./HomeView";
 import AboutView from "./AboutView";
+import ScrollContainer from "components/ScrollContainer";
 
 const Views = () => {
-  return (
-    <Fragment>
-      <HomeView />
-      <AboutView />
-    </Fragment>
-  );
+  const elements = [HomeView, AboutView, AboutView, AboutView];
+  return <ScrollContainer elements={elements} />;
 };
 
 export default Views;

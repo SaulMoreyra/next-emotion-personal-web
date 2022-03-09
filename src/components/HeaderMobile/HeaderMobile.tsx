@@ -10,8 +10,10 @@ import {
 import ButtonTheme from "components/ButtonTheme";
 import Switch from "components/Switch";
 import LinkMobile from "components/LinkMobile";
+import useMenu from "hooks/useMenu";
 
 const HeaderMobile = () => {
+  const menu = useMenu();
   const [open, setOpen] = useState(false);
   const [language, setLanguage] = useState("es");
   const handleOpen = () => setOpen(!open);
@@ -41,11 +43,14 @@ const HeaderMobile = () => {
             onClick={handleLanguage}
           />
         </LanguageContainer>
-        <LinkMobile active={true}>Inicio</LinkMobile>
-        <LinkMobile>Sobre mi</LinkMobile>
-        <LinkMobile>Experiencia</LinkMobile>
-        <LinkMobile>Portafolio</LinkMobile>
-        <LinkMobile>Contactame</LinkMobile>
+        {menu.items.map((item, index) => (
+          <LinkMobile
+            key={`menu_mobile-${index}`}
+            active={index === menu.active}
+          >
+            {item}
+          </LinkMobile>
+        ))}
       </SideBarStyled>
     </Fragment>
   );

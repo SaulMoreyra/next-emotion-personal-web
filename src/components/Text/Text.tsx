@@ -4,6 +4,7 @@ import { Body, Subtitle, Title } from "./Text.styled";
 type Props = {
   variant: "title" | "subtitle" | "body";
   children: React.ReactNode | String | JSX.Element | JSX.Element[];
+  align?: "center" | "left" | "right";
 };
 
 const texts = {
@@ -12,9 +13,9 @@ const texts = {
   body: Body,
 };
 
-const Text = ({ variant, children }: Props) => {
+const Text = ({ variant, children, ...props }: Props) => {
   const Component = texts[variant];
-  return <Component>{children}</Component>;
+  return <Component {...props}>{children}</Component>;
 };
 
 export default Text;

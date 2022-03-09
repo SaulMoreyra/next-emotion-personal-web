@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { ContainerWithRefProps } from "interfaces/Container";
 
 export const AtomHomeContainer = styled.div(({ theme }) => ({
   "@media (max-width: 960px)": {
@@ -8,7 +9,7 @@ export const AtomHomeContainer = styled.div(({ theme }) => ({
   display: "flex",
 }));
 
-export const HomeContainer = styled.div(({ theme }) => ({
+export const HomeContainer = styled.div(({ theme }: ContainerWithRefProps) => ({
   display: "grid",
   minHeight: "100vh",
   gridTemplateColumns: "1fr 1fr 1fr",

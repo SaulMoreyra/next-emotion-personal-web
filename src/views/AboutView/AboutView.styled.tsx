@@ -1,12 +1,15 @@
 import styled from "@emotion/styled";
+import { ContainerWithRefProps } from "interfaces/Container";
 
-export const AboutContainer = styled.div(({ theme }) => ({
-  padding: theme.spacing(8, 4, 0, 4),
-  minHeight: "100vh",
-  display: "grid",
-  gridTemplateColumns: "30% auto",
-  gridTemplateRows: "10% auto",
-}));
+export const AboutContainer = styled.div(
+  ({ theme }: ContainerWithRefProps) => ({
+    padding: theme?.spacing(8, 4, 0, 4),
+    minHeight: "100vh",
+    display: "grid",
+    gridTemplateColumns: "30% auto",
+    gridTemplateRows: "10% auto",
+  })
+);
 
 export const TitleContainer = styled.div(({ theme }) => ({
   gridColumn: "1 / span 2",

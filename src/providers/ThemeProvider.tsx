@@ -1,17 +1,14 @@
-import { createContext, useState, useCallback, useEffect } from "react";
+import { createContext, useState, useCallback } from "react";
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import Themes from "../theme";
-
-type Props = {
-  children: JSX.Element | JSX.Element[] | null;
-};
+import { ProviderProps } from "interfaces/Provider";
 
 export const ThemeChangeContext = createContext({
   isDark: false,
   toggleMode: () => {},
 });
 
-const ThemeProvider = ({ children }: Props) => {
+const ThemeProvider = ({ children }: ProviderProps) => {
   const [isDark, setDark] = useState(false);
   const toggleMode = useCallback(() => {
     setDark((prevMode) => !prevMode);

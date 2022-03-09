@@ -17,12 +17,12 @@ import {
   IconsContainer,
 } from "./AboutView.styled";
 
-const AboutView = () => {
+const AboutView = React.forwardRef((_, ref) => {
   return (
-    <AboutContainer>
+    <AboutContainer ref={ref}>
       <TitleContainer>
         <Text variant="subtitle">Sobre Mi</Text>
-        <Text variant="body">Sobre Mi</Text>
+        <Text variant="body">Presentación</Text>
       </TitleContainer>
       <TringlesContainer>
         <IconTrinagles />
@@ -30,8 +30,7 @@ const AboutView = () => {
       <TextContainer>
         <Text variant="body">
           Actualmente tengo 3 años de experiencia en el mundo del desarrollo web
-          y móvil. Aunque veces me estreso en el proceso, me apasiona aprender
-          nuevas tecnológias.
+          y móvil. Me apasiona aprender nuevas tecnológias.
         </Text>
         <Text variant="body">
           He participado en multiples proyectos como freelance y actualmente soy
@@ -40,7 +39,9 @@ const AboutView = () => {
             Fintecimal
           </SimpleLink>
         </Text>
-        <Text variant="body">Mis tecnologias favoritas</Text>
+        <Text variant="body" align="center">
+          Mis tecnologias favoritas
+        </Text>
         <IconsContainer>
           <IconLink icon={IconMongo} />
           <IconLink icon={IconExpress} />
@@ -65,7 +66,7 @@ const AboutView = () => {
       </TextContainer>
     </AboutContainer>
   );
-};
+});
 
 export default AboutView;
 
