@@ -18,6 +18,7 @@ import {
 import Text from "components/Text";
 import IconButton from "components/IconButton";
 import IconLink from "components/IconLink";
+import useMenu from "hooks/useMenu";
 
 const icons = [
   { href: "https://www.facebook.com/saulrmoreyra/", icon: IconFacebook },
@@ -27,6 +28,7 @@ const icons = [
 ];
 
 const Presentation = () => {
+  const menu = useMenu();
   return (
     <ContainerStyled>
       <IconsContainer>
@@ -55,7 +57,7 @@ const Presentation = () => {
           <Button type="primary" endIcon={IconArrowNext}>
             Contáctame
           </Button>
-          <IconButton icon={IconArrowDown} circular />
+          <IconButton icon={IconArrowDown} circular onClick={menu.next} />
         </ButtonContainer>
       </TextContainer>
     </ContainerStyled>

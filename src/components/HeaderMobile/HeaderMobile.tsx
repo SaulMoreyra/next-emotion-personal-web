@@ -1,16 +1,17 @@
-import React, { Fragment, useEffect, useState } from "react";
+import ButtonTheme from "components/ButtonTheme";
 import IconButton from "components/IconButton";
 import { IconExit, IconHamburger } from "components/Icons";
+import LinkMobile from "components/LinkMobile";
+import Switch from "components/Switch";
+import useMenu from "hooks/useMenu";
+import React, { Fragment, useCallback, useState } from "react";
 import {
+  BakdropStyled,
   HeaderContainerStyled,
+  LanguageContainer,
   LinksContainerStyled,
   SideBarStyled,
-  LanguageContainer,
 } from "./HeaderMobile.style";
-import ButtonTheme from "components/ButtonTheme";
-import Switch from "components/Switch";
-import LinkMobile from "components/LinkMobile";
-import useMenu from "hooks/useMenu";
 
 const HeaderMobile = () => {
   const menu = useMenu();
@@ -21,6 +22,14 @@ const HeaderMobile = () => {
     setLanguage(selected ? "en" : "es");
   };
 
+  const handleOnClick = useCallback(
+    (index: number) => {
+      menu.set(index);
+      menu.move(index);
+    },
+    [menu]
+  );
+
   return (
     <Fragment>
       <LinksContainerStyled>
@@ -29,6 +38,7 @@ const HeaderMobile = () => {
           type="secondary"
           icon={IconHamburger}
         />
+        <BakdropStyled open={open} onClick={handleOpen} />
       </LinksContainerStyled>
       <SideBarStyled open={open}>
         <HeaderContainerStyled>
@@ -47,6 +57,7 @@ const HeaderMobile = () => {
           <LinkMobile
             key={`menu_mobile-${index}`}
             active={index === menu.active}
+            onClick={() => handleOnClick(index)}
           >
             {item}
           </LinkMobile>

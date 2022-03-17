@@ -7,9 +7,13 @@ import { LinksContainerStyled } from "./HeaderWeb.styled";
 const HeaderWeb = () => {
   const menu = useMenu();
 
-  const handleOnClick = useCallback((index: number) => {
-    menu.set(index);
-  }, []);
+  const handleOnClick = useCallback(
+    (index: number) => {
+      menu.set(index);
+      menu.move(index);
+    },
+    [menu]
+  );
 
   return (
     <LinksContainerStyled>

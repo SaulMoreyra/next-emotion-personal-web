@@ -2,6 +2,7 @@ import React, {
   createRef,
   Fragment,
   useEffect,
+  useImperativeHandle,
   useMemo,
   useState,
 } from "react";
@@ -21,7 +22,7 @@ const ScrollContainer = ({ elements }: ScrollContainerProps) => {
         element,
         ref: createRef<HTMLDivElement>(),
       })),
-    []
+    [elements]
   );
 
   const handleOnScroll = useDebounce((event) => {
@@ -34,12 +35,26 @@ const ScrollContainer = ({ elements }: ScrollContainerProps) => {
     menu.set(currentMenu);
   }, 100);
 
+  const moveScrollToPosition = (index: number) => {
+    ScrollUtils.scrollTo(items[index]?.ref?.current as HTMLDivElement);
+  };
+
+  useImperativeHandle(
+    menu.posicionateRef,
+    () => {
+      return {
+        moveScrollToPosition,
+      };
+    },
+    [items, menu.active]
+  );
+
   useEffect(() => {
     if (!window) return;
 
     window.addEventListener("scroll", handleOnScroll);
     return () => window.removeEventListener("scroll", handleOnScroll);
-  }, []);
+  }, [handleOnScroll]);
 
   return (
     <Fragment>

@@ -51,3 +51,16 @@ export const LanguageContainer = styled(SideContainerItemStyled)(
     padding: theme?.spacing(0, 4),
   })
 );
+
+type BackdropType = SideBarType;
+export const BakdropStyled = styled.div(({ theme, open }: BackdropType) => ({
+  ...(!open ? { display: "none" } : {}),
+  position: "fixed",
+  top: 0,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  backgroundColor: theme?.fade(theme.black, 0.2),
+  zIndex: 0,
+  transition: "0.5s",
+}));
