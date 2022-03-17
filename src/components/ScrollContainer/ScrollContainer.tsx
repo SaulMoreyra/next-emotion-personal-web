@@ -1,14 +1,14 @@
+import useDebounce from "hooks/useDebounce";
+import useMenu from "hooks/useMenu";
 import React, {
   createRef,
   Fragment,
+  useCallback,
   useEffect,
   useImperativeHandle,
   useMemo,
-  useState,
 } from "react";
-import useDebounce from "hooks/useDebounce";
 import ScrollUtils from "utils/ScrollUtils";
-import useMenu from "hooks/useMenu";
 
 type ScrollContainerProps = {
   elements: React.ForwardRefExoticComponent<React.RefAttributes<unknown>>[];
@@ -35,9 +35,12 @@ const ScrollContainer = ({ elements }: ScrollContainerProps) => {
     menu.set(currentMenu);
   }, 100);
 
-  const moveScrollToPosition = (index: number) => {
-    ScrollUtils.scrollTo(items[index]?.ref?.current as HTMLDivElement);
-  };
+  const moveScrollToPosition = useCallback(
+    (index: number) => {
+      ScrollUtils.scrollTo(items[index]?.ref?.current as HTMLDivElement);
+    },
+    [items]
+  );
 
   useImperativeHandle(
     menu.posicionateRef,
@@ -46,7 +49,7 @@ const ScrollContainer = ({ elements }: ScrollContainerProps) => {
         moveScrollToPosition,
       };
     },
-    [items, menu.active]
+    [moveScrollToPosition]
   );
 
   useEffect(() => {
