@@ -9,6 +9,7 @@ export const AboutContainer = styled.div(
     gridTemplateColumns: "30% auto",
     gridTemplateRows: "10% auto",
     position: "relative",
+    overflow: "hidden",
   })
 );
 

@@ -4,7 +4,7 @@ import AboutView from "./AboutView";
 import ScrollContainer from "components/ScrollContainer";
 
 const Views = () => {
-  const elements = [HomeView, AboutView, AboutView, AboutView];
+  const elements = [HomeView, AboutView];
   return <ScrollContainer elements={elements} />;
 };
 

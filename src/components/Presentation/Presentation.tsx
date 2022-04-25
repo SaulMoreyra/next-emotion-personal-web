@@ -1,24 +1,25 @@
+import IconButton from "components/IconButton";
+import IconLink from "components/IconLink";
+import Text from "components/Text";
+import useMenu from "hooks/useMenu";
+import { useTranslation } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
-import { useTheme } from "@emotion/react";
+import Button from "../Button";
 import {
-  IconArrowNext,
   IconArrowDown,
+  IconArrowNext,
   IconFacebook,
   IconGithub,
   IconInstagram,
   IconLinkedin,
 } from "../Icons";
-import Button from "../Button";
 import {
-  ContainerStyled,
-  TextContainer,
   ButtonContainer,
+  ContainerStyled,
   IconsContainer,
+  TextContainer,
 } from "./Presentation.styled";
-import Text from "components/Text";
-import IconButton from "components/IconButton";
-import IconLink from "components/IconLink";
-import useMenu from "hooks/useMenu";
 
 const icons = [
   { href: "https://www.facebook.com/saulrmoreyra/", icon: IconFacebook },
@@ -29,6 +30,7 @@ const icons = [
 
 const Presentation = () => {
   const menu = useMenu();
+  const { t } = useTranslation("presentation");
   return (
     <ContainerStyled>
       <IconsContainer>
@@ -42,20 +44,14 @@ const Presentation = () => {
         ))}
       </IconsContainer>
       <TextContainer>
-        <Text variant="title">¡Hola! Soy Saúl Moreyra</Text>
-        <Text variant="subtitle">Fullstack Developer</Text>
-        <Text variant="body">Oaxaca, México</Text>
-        <Text variant="body">
-          Soy Ingeniero en Sistemas Computacionales, egresado del TecNM Campus
-          Oaxaca.
-        </Text>
-        <Text variant="body">
-          No me gusta trabajar solo, si estas buscando alguién con quien codear
-          yo soy el indicado!.
-        </Text>
+        <Text variant="title">{t("hello")}</Text>
+        <Text variant="subtitle">{t("role")}</Text>
+        <Text variant="body">{t("place")}</Text>
+        <Text variant="body">{t("intro")}</Text>
+        <Text variant="body">{t("outtro")}</Text>
         <ButtonContainer>
           <Button type="primary" endIcon={IconArrowNext}>
-            Contáctame
+            {t("contact")}
           </Button>
           <IconButton icon={IconArrowDown} circular onClick={menu.next} />
         </ButtonContainer>

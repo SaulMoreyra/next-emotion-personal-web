@@ -1,7 +1,8 @@
-import type { NextPage } from "next";
-import Head from "next/head";
 import { ContentContainer, GlobalContainer } from "components/Containers";
 import Header from "components/Header";
+import type { NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 import Views from "views";
 
 const Home: NextPage = () => {
@@ -20,5 +21,11 @@ const Home: NextPage = () => {
     </GlobalContainer>
   );
 };
+
+export const getServerSideProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "presentation"])),
+  },
+});
 
 export default Home;

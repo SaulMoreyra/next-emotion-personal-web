@@ -18,6 +18,7 @@ type SideBarType = {
   HTMLAttributes<HTMLDivElement> & {
     open: boolean;
   };
+
 export const SideBarStyled = styled.div(({ theme, open }: SideBarType) => ({
   zIndex: 4,
   position: "fixed",

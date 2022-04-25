@@ -4,6 +4,7 @@ import { IconExit, IconHamburger } from "components/Icons";
 import LinkMobile from "components/LinkMobile";
 import Switch from "components/Switch";
 import useMenu from "hooks/useMenu";
+import { useRouter } from "next/router";
 import React, { Fragment, useCallback, useState } from "react";
 import {
   BakdropStyled,
@@ -14,12 +15,18 @@ import {
 } from "./HeaderMobile.style";
 
 const HeaderMobile = () => {
+  const router = useRouter();
   const menu = useMenu();
   const [open, setOpen] = useState(false);
-  const [language, setLanguage] = useState("es");
+  const [language, setLanguage] = useState(router.locale);
   const handleOpen = () => setOpen(!open);
+
   const handleLanguage = (selected: boolean) => {
-    setLanguage(selected ? "en" : "es");
+    const lng = selected ? "en" : "es";
+    setLanguage(lng);
+    router.replace(router.pathname, router.pathname, {
+      locale: lng,
+    });
   };
 
   const handleOnClick = useCallback(
@@ -68,3 +75,6 @@ const HeaderMobile = () => {
 };
 
 export default HeaderMobile;
+function locale(locale: any, arg1: string) {
+  throw new Error("Function not implemented.");
+}
