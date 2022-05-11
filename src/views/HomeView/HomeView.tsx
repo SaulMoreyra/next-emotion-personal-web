@@ -14,4 +14,6 @@ const Home = React.forwardRef((_, ref) => {
   );
 });
 
+Home.displayName = "HomeView";
+
 export default Home;

@@ -1,13 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const useMediaQuery = (query: string, pixels: number) => {
   const [matches, setMatches] = useState(false);
 
-  const handleMatches = () => {
+  const handleMatches = useCallback(() => {
     const fullQuery = `(${query}: ${pixels}px)`;
     const media = window.matchMedia(fullQuery);
     setMatches(media.matches);
-  };
+  }, [pixels, query]);
 
   useEffect(() => {
     if (!window) return;
@@ -16,7 +16,7 @@ const useMediaQuery = (query: string, pixels: number) => {
     handleMatches();
 
     return () => window.removeEventListener("resize", handleMatches);
-  }, []);
+  }, [handleMatches]);
   return matches;
 };
 

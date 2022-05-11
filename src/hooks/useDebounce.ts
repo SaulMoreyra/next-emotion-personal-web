@@ -14,6 +14,7 @@ const useDebounce = <T extends any[]>(
         callback(...args);
       }, wait);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [callback, wait, ...dependencies]
   );
 
