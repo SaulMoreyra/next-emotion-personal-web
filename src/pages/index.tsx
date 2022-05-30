@@ -4,6 +4,7 @@ import type { NextPage } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Head from "next/head";
 import Views from "views";
+import i18nConfig from "../../next-i18next.config";
 
 const Home: NextPage = () => {
   return (
@@ -24,7 +25,11 @@ const Home: NextPage = () => {
 
 export const getServerSideProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "presentation"])),
+    ...(await serverSideTranslations(
+      locale ?? "es",
+      ["common", "presentation"],
+      i18nConfig
+    )),
   },
 });
 
