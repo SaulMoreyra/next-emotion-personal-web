@@ -3,7 +3,8 @@ import { ContainerWithRefProps } from "interfaces/Container";
 
 export const AboutContainer = styled.div(
   ({ theme }: ContainerWithRefProps) => ({
-    padding: theme?.spacing(8, 4, 0, 4),
+    scrollSnapAlign: "start",
+    padding: theme?.spacing(10, 4, 0, 4),
     minHeight: "100vh",
     display: "grid",
     gridTemplateColumns: "30% auto",

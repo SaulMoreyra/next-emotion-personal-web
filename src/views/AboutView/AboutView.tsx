@@ -4,43 +4,50 @@ import {
   IconMongo,
   IconNode,
   IconReact,
-  IconTrinagles,
+  IconTrinagles
 } from "components/Icons";
 import { SimpleLink } from "components/Link";
 import Text from "components/Text";
-import React, { Fragment } from "react";
+import { useTranslation } from "next-i18next";
+import React from "react";
 import {
-  AboutContainer,
-  TitleContainer,
-  TringlesContainer,
-  TextContainer,
-  IconsContainer,
+  AboutContainer, IconsContainer, TextContainer, TitleContainer,
+  TringlesContainer
 } from "./AboutView.styled";
 
 const AboutView = React.forwardRef((_, ref) => {
+  const { t } = useTranslation("about")
+
   return (
     <AboutContainer ref={ref}>
       <TitleContainer>
-        <Text variant="subtitle">Sobre Mi</Text>
-        <Text variant="body">Presentación</Text>
+        <Text variant="subtitle">{t("title")}</Text>
+        <Text variant="body">{t("subtitle")}</Text>
       </TitleContainer>
       <TringlesContainer>
         <IconTrinagles />
       </TringlesContainer>
       <TextContainer>
         <Text variant="body">
-          Actualmente tengo 3 años de experiencia en el mundo del desarrollo web
-          y móvil. Me apasiona aprender nuevas tecnológias.
+          {t("currently")}
         </Text>
         <Text variant="body">
-          He participado en multiples proyectos como freelance y actualmente soy
-          desarrollador fullstack en{" "}
+          {t("jobs")}{" "}
+          👉
+          <SimpleLink href="https://www.skydropx.com/" target="_blank">
+            Skydropx
+          </SimpleLink>
+          👈
+        </Text>
+        <Text variant="body">
+          {t("before")}{" "}
           <SimpleLink href="https://www.fintecimal.com/" target="_blank">
             Fintecimal
           </SimpleLink>
+          💕
         </Text>
         <Text variant="body" align="center">
-          Mis tecnologias favoritas
+          {t("tecnologies")}
         </Text>
         <IconsContainer>
           <IconLink icon={IconMongo} />
@@ -48,21 +55,6 @@ const AboutView = React.forwardRef((_, ref) => {
           <IconLink icon={IconReact} />
           <IconLink icon={IconNode} />
         </IconsContainer>
-        <Text variant="body">
-          Cuando no estoy programando o aprendiendo algo nuevo, me encanta jugar
-          videojuegos como Fortnite, Gears 5 o Warzone. Mi videojuego favorito
-          de la vida es Gears of War 3.
-        </Text>
-        <Text variant="body">
-          Si quieres pasarte por mi página de streams puedes seguirme{" "}
-          <SimpleLink
-            href="https://www.facebook.com/ARMHAStreams"
-            target="_blank"
-          >
-            aqui
-          </SimpleLink>
-          , pero debo advertirte que no hago stream muy seguido.
-        </Text>
       </TextContainer>
     </AboutContainer>
   );

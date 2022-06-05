@@ -11,7 +11,7 @@ import {
   HeaderContainerStyled,
   LanguageContainer,
   LinksContainerStyled,
-  SideBarStyled,
+  SideBarStyled
 } from "./HeaderMobile.style";
 
 const HeaderMobile = () => {

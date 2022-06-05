@@ -1,3 +1,4 @@
+import styled from "@emotion/styled";
 import useDebounce from "hooks/useDebounce";
 import useMenu from "hooks/useMenu";
 import React, {
@@ -13,6 +14,10 @@ import ScrollUtils from "utils/ScrollUtils";
 type ScrollContainerProps = {
   elements: React.ForwardRefExoticComponent<React.RefAttributes<unknown>>[];
 };
+
+export const ScrollContainerStyled = styled.div(() => ({
+  scrollSnapType: "x mandatory"
+}));
 
 const ScrollContainer = ({ elements }: ScrollContainerProps) => {
   const menu = useMenu();
@@ -60,11 +65,11 @@ const ScrollContainer = ({ elements }: ScrollContainerProps) => {
   }, [handleOnScroll]);
 
   return (
-    <Fragment>
+    <ScrollContainerStyled>
       {items.map(({ element: Element, ref }, index) => (
         <Element ref={ref} key={`child-container-${index}`} />
       ))}
-    </Fragment>
+    </ScrollContainerStyled>
   );
 };
 
