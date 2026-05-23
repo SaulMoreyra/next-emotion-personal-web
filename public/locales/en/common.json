@@ -1,6 +1,14 @@
 {
   "home": "Home",
-  "about": "About me",
+  "about": "About",
   "experience": "Experience",
-  "contact": "Contact"
+  "projects": "Projects",
+  "skills": "Skills",
+  "contact": "Contact",
+  "skipToContent": "Skip to content",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "switchToLight": "Switch to light mode",
+  "switchToDark": "Switch to dark mode",
+  "logoHome": "Go to home"
 }

@@ -1,0 +1,30 @@
+{
+  "label": "Projects",
+  "title": "Selected work",
+  "description": "Products and systems where I've made a meaningful impact.",
+  "featuredLabel": "Featured",
+  "liveDemo": "Live demo",
+  "sourceCode": "Source code",
+  "entries": {
+    "zenfi": {
+      "title": "Zenfi App",
+      "description": "Mexico's leading financial health app: credit bureau reports, SAT tax info, AI-powered expense tracking, and credit card monitoring — all from your phone. I contributed to the mobile app (Expo/React Native) by migrating to dark mode, standardizing the color system and team codebase, and shipping smoother UX animations."
+    },
+    "keepLedger": {
+      "title": "Ledger System — Keep",
+      "description": "Structured ledger for financial operations, bulk migration scripts, and internal tooling with Prisma, GraphQL, and tRPC."
+    },
+    "skydropxIntegrations": {
+      "title": "E-commerce Hub — Skydropx",
+      "description": "Tienda Nube and Shopify integrations, Next.js migration with SSR, and performance improvements for the logistics platform."
+    },
+    "amoofy": {
+      "title": "Amoofy MVP",
+      "description": "MVP frontend with Vite, React, and Tailwind. Responsive interfaces and maintainable architecture for early product validation."
+    },
+    "portfolio": {
+      "title": "Personal Portfolio",
+      "description": "This site: Next.js, Emotion, ES/EN i18n, dark mode, and a design focused on professional storytelling."
+    }
+  }
+}

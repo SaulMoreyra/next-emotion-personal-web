@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export type ProviderProps = {
-  children: React.ReactElement | JSX.Element | JSX.Element[];
+  children: ReactNode;
 };

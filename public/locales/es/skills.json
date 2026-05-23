@@ -1,0 +1,14 @@
+{
+  "label": "Skills",
+  "title": "Stack y aptitudes",
+  "description": "Tecnologías con las que he construido productos en producción.",
+  "languagesTitle": "Idiomas",
+  "languages": {
+    "es": "Español",
+    "en": "Inglés"
+  },
+  "levels": {
+    "native": "Nativo o bilingüe",
+    "professional": "Profesional completo"
+  }
+}

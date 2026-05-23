@@ -1,5 +1,3 @@
-import ProviderUtils from "utils/ProviderUtils";
-import MenuProvider from "./MenuProvider";
-import ThemeProvider from "./ThemeProvider";
+"use client";
 
-export default ProviderUtils.convine(MenuProvider, ThemeProvider);
+export { default } from "./Providers";

@@ -1,0 +1,6 @@
+{
+  "years": { "value": "5+", "label": "Years of experience" },
+  "companies": { "value": "11", "label": "Companies" },
+  "currentRole": { "value": "Tech Lead", "label": "Current role" },
+  "focus": { "value": "Fullstack", "label": "Specialty" }
+}

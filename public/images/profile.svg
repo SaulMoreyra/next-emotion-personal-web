@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" role="img" aria-label="Saúl Moreyra">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0A"/>
+      <stop offset="1" stop-color="#171717"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="80" y1="60" x2="320" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C8F135"/>
+      <stop offset="1" stop-color="#9BC018"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="32" fill="url(#bg)"/>
+  <circle cx="200" cy="168" r="88" fill="url(#accent)" opacity="0.18"/>
+  <circle cx="200" cy="148" r="72" fill="#262626" stroke="#C8F135" stroke-width="3"/>
+  <text x="200" y="168" text-anchor="middle" dominant-baseline="middle" fill="#C8F135" font-family="system-ui, sans-serif" font-size="56" font-weight="700" letter-spacing="-2">SM</text>
+  <rect x="72" y="268" width="256" height="12" rx="6" fill="#262626"/>
+  <rect x="112" y="296" width="176" height="8" rx="4" fill="#333"/>
+</svg>

@@ -7,11 +7,12 @@ type IconLinkProps = {
   icon: (iconProps: IconProps) => JSX.Element;
   href?: string;
   target?: string;
+  "aria-label"?: string;
 };
 
 const IconLink = ({ icon: Icon, ...rest }: IconLinkProps) => {
   const theme = useTheme();
-  const color = theme.isDark ? theme.primary.main : theme.grey;
+  const color = theme.primary.foreground;
   return (
     <IconContainer {...rest}>
       <Icon color={color} />

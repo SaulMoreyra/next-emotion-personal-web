@@ -1,8 +1,11 @@
 {
-  "hello": "Hello! I'm Saul Moreyra",
-  "role": "Fullstack Developer",
-  "place": "Oaxaca, México",
-  "intro": "I am a Computer Systems Engineer, graduated from the TecNM Campus Oaxaca.",
-  "outtro": "I don't like to work alone, if you're looking for someone to write code with, I'm the one!",
-  "contact": "Contact me"
+  "hello": "Saúl Moreyra",
+  "role": "Senior Software Engineer · Tech Lead",
+  "place": "Oaxaca, Mexico",
+  "status": "Open to collaborate",
+  "intro": "Fullstack Developer with experience in React, Node.js, TypeScript, and mobile apps. Currently Tech Lead at Zenfi, Mexico's leading financial health app.",
+  "outro": "I'm passionate about learning, shipping fast, and working in teams. If you're looking for someone to build with, let's connect.",
+  "contactCta": "Get in touch",
+  "projectsCta": "View projects",
+  "scrollHint": "Go to about"
 }

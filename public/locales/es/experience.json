@@ -1,0 +1,20 @@
+{
+  "label": "Experiencia",
+  "title": "Empresas donde he trabajado",
+  "description": "Trayectoria en fintech, logística, startups, sector público y educación.",
+  "showMore": "Ver experiencia anterior",
+  "showLess": "Ver menos",
+  "entries": {
+    "zenfi": "Tech Lead en la app móvil de salud financiera #1 en México (Buró, SAT, gastos con IA). Migración a dark mode, sistema de colores unificado, estandarización de código y animaciones más fluidas con Expo, React Native y TypeScript.",
+    "amoofy": "Colaboré en el MVP de Amoofy: arquitectura frontend con Vite, React y Tailwind CSS, interfaces responsivas y entrega rápida orientada al usuario.",
+    "keep": "Fullstack en Keep (fintech canadiense): tooling interno, ledger estructurado, migraciones masivas con Prisma, Next.js, PostgreSQL, GraphQL y tRPC.",
+    "skydropx": "Migración de jQuery a Next.js, SSR para SEO, integraciones con Tienda Nube y Shopify, UI con Material-UI y Styled Components.",
+    "fintecimal": "Desarrollo fullstack React/Node en soluciones financieras y productos digitales.",
+    "coneval": "Desarrollo fullstack React/Spring para plataformas del sector público.",
+    "nestle": "Desarrollo React para plataforma de registro y control de usuarios.",
+    "tekton": "Desarrollo Android para aplicativo de empadronamiento.",
+    "bancoForjadores": "Desarrollo Android y librería para captura de imágenes en app bancaria.",
+    "get": "Desarrollo fullstack React/Node en proyectos de consultoría.",
+    "ito": "Secretario de Conciliación Estudiantil del Grupo Representativo de ISC. Profesor invitado en Estructura de Datos."
+  }
+}

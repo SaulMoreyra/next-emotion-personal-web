@@ -14,21 +14,23 @@ export const fade = (hex: string, alpha = 1) => {
 const breakpoints = {
   in: "1px",
   sm: "576px",
-  md: "820px",
+  md: "768px",
   lg: "1024px",
   xl: "1280px",
-  xxl: "1920px",
+  xxl: "1536px",
 };
 
 const theme = {
   breakpoints,
   spacing,
   fade,
-  black: "#000000",
-  ligthBlack: "#2e2e2e",
-  white: "#FFFFFF",
-  grey: "#50514F",
-  ligthGrey: "#F2F2F2",
+  black: "#0A0A0A",
+  lightBlack: "#171717",
+  white: "#FAFAFA",
+  grey: "#737373",
+  lightGrey: "#E5E5E5",
+  border: "#262626",
+  borderLight: "#E5E5E5",
 };
 
 export default theme;

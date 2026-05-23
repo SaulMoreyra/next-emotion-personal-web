@@ -28,7 +28,7 @@ type SvgBaseContainerType = {
 
 export const SvgBaseContainer = styled.div(
   ({ size }: SvgBaseContainerType) => ({
-    position: "absolute",
+    position: "absolute" as const,
     top: "50%",
     right: "50%",
     transform: "translate(50%,-50%)",

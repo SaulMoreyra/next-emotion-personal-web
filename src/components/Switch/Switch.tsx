@@ -6,16 +6,27 @@ type Props = {
   optionTwo: string;
   onClick: (selected: boolean) => void;
   selected: boolean;
+  compact?: boolean;
 };
 
-const Switch = ({ optionOne, optionTwo, onClick, selected }: Props) => {
+const Switch = ({
+  optionOne,
+  optionTwo,
+  onClick,
+  selected,
+  compact = false,
+}: Props) => {
   const handleOnClick = () => onClick(!selected);
 
   return (
-    <SwitchContainer onClick={handleOnClick}>
-      <Slider selected={selected} />
-      <Label selected={selected}>{optionOne}</Label>
-      <Label selected={!selected}>{optionTwo}</Label>
+    <SwitchContainer $compact={compact} onClick={handleOnClick}>
+      <Slider $selected={selected} $compact={compact} />
+      <Label $selected={selected} $compact={compact}>
+        {optionOne}
+      </Label>
+      <Label $selected={!selected} $compact={compact}>
+        {optionTwo}
+      </Label>
     </SwitchContainer>
   );
 };

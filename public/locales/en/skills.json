@@ -1,0 +1,14 @@
+{
+  "label": "Skills",
+  "title": "Stack & strengths",
+  "description": "Technologies I've used to ship production products.",
+  "languagesTitle": "Languages",
+  "languages": {
+    "es": "Spanish",
+    "en": "English"
+  },
+  "levels": {
+    "native": "Native or bilingual",
+    "professional": "Full professional"
+  }
+}

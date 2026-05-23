@@ -1,8 +1,15 @@
 {
-  "title": "Sobre Mi",
-  "subtitle": "Presentación",
-  "currently": "Me apasiona aprender nuevas tecnológias! \nActualmente tengo 3 años de experiencia en el mundo del desarrollo web y móvil.",
-  "jobs": "He participado en multiples proyectos como freelance y actualmente soy React Developer en", 
-  "tecnologies": "Mis tecnologias favoritas",
-  "before": "Anteriormente era FullStack Developer en"
+  "label": "Sobre mí",
+  "title": "Ingeniero de software con enfoque fullstack",
+  "description": "Más de 5 años construyendo productos web y móviles para fintech, logística y startups.",
+  "bioTitle": "Perfil",
+  "bio": "Ingeniero en Sistemas Computacionales egresado del TecNM Campus Oaxaca. Me especializo en arquitectura frontend, APIs escalables y entrega de MVPs con calidad de producción. Disfruto liderar equipos, mentorizar y resolver problemas de negocio con código.",
+  "educationTitle": "Educación",
+  "awardsTitle": "Reconocimientos",
+  "awards": {
+    "honorableMention": "Mención Honorífica",
+    "firstPlaceInnovation": "Diploma al Primer Lugar — Evento Nacional Estudiantil de Innovación Tecnológica 2019",
+    "regionalFair2019": "Constancia Feria Regional de Innovación y Desarrollo 2019",
+    "bronzeMultimedia2018": "Medalla Bronce — Proyecto Multimedia 2018"
+  }
 }

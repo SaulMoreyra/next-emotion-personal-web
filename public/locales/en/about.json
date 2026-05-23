@@ -1,8 +1,15 @@
 {
-  "title": "About Me",
-  "subtitle": "Introduction",
-  "currently": "I am passionate about learning new technologies! I currently have 3 years of experience in the world of web and mobile development.",
-  "jobs": "I have participated in multiple projects as a freelancer and I am currently a React Developer at", 
-  "tecnologies": "My favorite technologies",
-  "before": "I was previously a FullStack Developer at"
+  "label": "About",
+  "title": "Software engineer with a fullstack focus",
+  "description": "5+ years building web and mobile products for fintech, logistics, and startups.",
+  "bioTitle": "Profile",
+  "bio": "Computer Systems Engineer from TecNM Campus Oaxaca. I specialize in frontend architecture, scalable APIs, and shipping production-quality MVPs. I enjoy leading teams, mentoring, and solving business problems with code.",
+  "educationTitle": "Education",
+  "awardsTitle": "Honors & Awards",
+  "awards": {
+    "honorableMention": "Honorable Mention",
+    "firstPlaceInnovation": "First Place Diploma — National Student Innovation Technology Event 2019",
+    "regionalFair2019": "Regional Innovation and Development Fair Certificate 2019",
+    "bronzeMultimedia2018": "Bronze Medal — Multimedia Project 2018"
+  }
 }

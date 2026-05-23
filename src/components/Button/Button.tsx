@@ -1,18 +1,24 @@
-import React from "react";
+import React, { ButtonHTMLAttributes, ReactNode } from "react";
 import { PrimaryButtonStyled, SecondaryButtonStyled } from "./Button.styled";
 
 type Props = {
-  children: string | JSX.Element | JSX.Element[];
+  children: ReactNode;
   type: "primary" | "secondary";
   endIcon?: (props: { color?: string }) => JSX.Element;
-};
+} & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type">;
 
-const Button = ({ type, children, endIcon: EndIcon }: Props) => {
+const Button = ({
+  type,
+  children,
+  endIcon: EndIcon,
+  onClick,
+  ...props
+}: Props) => {
   const Component =
     type === "primary" ? PrimaryButtonStyled : SecondaryButtonStyled;
 
   return (
-    <Component>
+    <Component type="button" onClick={onClick} {...props}>
       {children} {EndIcon && <EndIcon />}
     </Component>
   );

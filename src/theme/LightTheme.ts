@@ -1,19 +1,32 @@
 import defaultTheme from "./DefaultTheme";
+import { typography, fonts } from "./typography";
+import { media } from "./media";
 
 const theme = {
   ...defaultTheme,
   type: "light",
   isDark: false,
+  typography,
+  fonts,
+  media,
   primary: {
-    main: "#D3FF52",
+    main: "#C8F135",
     light: "#E3FE9C",
-    dark: "#cdf851",
-    darker: "#B2D30B",
+    dark: "#B5DC28",
+    darker: "#9BC018",
+    foreground: "#9BC018",
+    muted: "rgba(200, 241, 53, 0.18)",
   },
-  background: "#ffffff",
+  background: "#FAFAFA",
+  surface: {
+    default: "#FFFFFF",
+    elevated: "#F5F5F5",
+    border: "#E5E5E5",
+  },
   text: {
-    secondary: "#50514F",
-    main: "#000000",
+    main: "#0A0A0A",
+    secondary: "#525252",
+    muted: "#737373",
   },
 };
 

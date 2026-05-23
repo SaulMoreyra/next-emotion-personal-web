@@ -1,8 +1,11 @@
 {
-  "hello": "¡Hola! Soy Saúl Moreyra",
-  "role": "Fullstack Developer",
+  "hello": "Saúl Moreyra",
+  "role": "Senior Software Engineer · Tech Lead",
   "place": "Oaxaca, México",
-  "intro": "Soy Ingeniero en Sistemas Computacionales, egresado del TecNM Campus Oaxaca.",
-  "outtro": "No me gusta trabajar solo, si estas buscando alguién con quien codear yo soy el indicado!.",
-  "contact": "Contáctame"
+  "status": "Disponible para colaborar",
+  "intro": "Fullstack Developer con experiencia en React, Node.js, TypeScript y apps móviles. Actualmente Tech Lead en Zenfi, la app de salud financiera líder en México.",
+  "outro": "Me apasiona aprender, iterar rápido y trabajar en equipo. Si buscas a alguien con quien codear, conversemos.",
+  "contactCta": "Ver contacto",
+  "projectsCta": "Ver proyectos",
+  "scrollHint": "Ir a sobre mí"
 }
