@@ -19,8 +19,15 @@ export const SecondaryText = styled(BaseText)(({ theme }) => ({
   marginTop: -5,
 }));
 
-export const ContainerLogo = styled.div(() => ({
+export const ContainerLogo = styled.a({
   display: "flex",
   justifyContent: "center",
   flexDirection: "column",
-}));
+  textDecoration: "none",
+  cursor: "pointer",
+  borderRadius: "8px",
+  "&:focus-visible": {
+    outline: "2px solid var(--color-accent-foreground)",
+    outlineOffset: "4px",
+  },
+});

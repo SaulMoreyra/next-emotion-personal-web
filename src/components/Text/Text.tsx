@@ -1,16 +1,18 @@
 import React from "react";
-import { Body, Subtitle, Title } from "./Text.styled";
+import { Body, Caption, Display, Subtitle, Title } from "./Text.styled";
 
 type Props = {
-  variant: "title" | "subtitle" | "body";
-  children: React.ReactNode | String | JSX.Element | JSX.Element[];
+  variant: "display" | "title" | "subtitle" | "body" | "caption";
+  children: React.ReactNode;
   align?: "center" | "left" | "right";
 };
 
 const texts = {
+  display: Display,
   title: Title,
   subtitle: Subtitle,
   body: Body,
+  caption: Caption,
 };
 
 const Text = ({ variant, children, ...props }: Props) => {

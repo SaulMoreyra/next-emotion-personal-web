@@ -1,3 +1,5 @@
+"use client";
+
 import React, { MouseEventHandler, ReactElement } from "react";
 import { useTheme } from "@emotion/react";
 import {
@@ -7,10 +9,11 @@ import {
 import { IconProps } from "../../interfaces/Icons";
 
 type Props = {
-  icon: (iconProps: IconProps) => JSX.Element;
+  icon: (iconProps: IconProps) => ReactElement;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   type?: "primary" | "secondary";
   circular?: boolean;
+  ariaLabel: string;
 };
 
 const IconButton = ({
@@ -18,13 +21,19 @@ const IconButton = ({
   icon: Component,
   type = "primary",
   circular = false,
+  ariaLabel,
 }: Props) => {
   const theme = useTheme();
   const Button =
     type === "primary" ? IconButtonPrimaryStyled : IconButtonSecondaryStyled;
 
   return (
-    <Button onClick={onClick} circular={circular}>
+    <Button
+      type="button"
+      onClick={onClick}
+      circular={circular}
+      aria-label={ariaLabel}
+    >
       <Component
         color={theme.type === "dark" ? theme.primary.main : theme.black}
       />

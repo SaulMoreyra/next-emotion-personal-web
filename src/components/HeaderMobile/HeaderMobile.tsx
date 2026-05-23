@@ -1,80 +1,112 @@
-import ButtonTheme from "components/ButtonTheme";
-import IconButton from "components/IconButton";
-import { IconExit, IconHamburger } from "components/Icons";
-import LinkMobile from "components/LinkMobile";
-import Switch from "components/Switch";
-import useMenu from "hooks/useMenu";
-import { useRouter } from "next/router";
-import React, { Fragment, useCallback, useState } from "react";
-import {
-  BakdropStyled,
-  HeaderContainerStyled,
-  LanguageContainer,
-  LinksContainerStyled,
-  SideBarStyled
-} from "./HeaderMobile.style";
-
-const HeaderMobile = () => {
-  const router = useRouter();
-  const menu = useMenu();
-  const [open, setOpen] = useState(false);
-  const [language, setLanguage] = useState(router.locale);
-  const handleOpen = () => setOpen(!open);
-
-  const handleLanguage = (selected: boolean) => {
-    const lng = selected ? "en" : "es";
-    setLanguage(lng);
-    router.replace(router.pathname, router.pathname, {
-      locale: lng,
-    });
-  };
-
-  const handleOnClick = useCallback(
-    (index: number) => {
-      menu.set(index);
-      menu.move(index);
-    },
-    [menu]
-  );
-
-  return (
-    <Fragment>
-      <LinksContainerStyled>
-        <IconButton
-          onClick={handleOpen}
-          type="secondary"
-          icon={IconHamburger}
-        />
-        <BakdropStyled open={open} onClick={handleOpen} />
-      </LinksContainerStyled>
-      <SideBarStyled open={open}>
-        <HeaderContainerStyled>
-          <IconButton onClick={handleOpen} type="secondary" icon={IconExit} />
-          <ButtonTheme />
-        </HeaderContainerStyled>
-        <LanguageContainer>
-          <Switch
-            selected={language !== "es"}
-            optionOne="English"
-            optionTwo="Spanish"
-            onClick={handleLanguage}
-          />
-        </LanguageContainer>
-        {menu.items.map((item, index) => (
-          <LinkMobile
-            key={`menu_mobile-${index}`}
-            active={index === menu.active}
-            onClick={() => handleOnClick(index)}
-          >
-            {item}
-          </LinkMobile>
-        ))}
-      </SideBarStyled>
-    </Fragment>
-  );
-};
-
-export default HeaderMobile;
-function locale(locale: any, arg1: string) {
-  throw new Error("Function not implemented.");
-}
+"use client";
+
+import ThemeToggle from "components/ThemeToggle";
+import IconButton from "components/IconButton";
+import { IconExit, IconHamburger } from "components/Icons";
+import LinkMobile from "components/LinkMobile";
+import Switch from "components/Switch";
+import { useNav } from "providers/NavProvider";
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter, usePathname } from "i18n/navigation";
+import React, { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import {
+  BakdropStyled,
+  HeaderContainerStyled,
+  LanguageContainer,
+  LinksContainerStyled,
+  SideBarStyled,
+} from "./HeaderMobile.style";
+
+const HeaderMobile = () => {
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+  const { sections, activeSection, scrollTo } = useNav();
+  const t = useTranslations("common");
+  const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  const handleOnClick = useCallback(
+    (id: (typeof sections)[number]["id"]) => {
+      scrollTo(id);
+      setOpen(false);
+    },
+    [scrollTo]
+  );
+
+  const handleLanguage = (selected: boolean) => {
+    const lng = selected ? "en" : "es";
+    router.replace(pathname, { locale: lng });
+  };
+
+  const drawer =
+    mounted && open
+      ? createPortal(
+          <>
+            <BakdropStyled open={open} onClick={() => setOpen(false)} />
+            <SideBarStyled open={open}>
+              <HeaderContainerStyled>
+                <IconButton
+                  onClick={() => setOpen(false)}
+                  type="secondary"
+                  icon={IconExit}
+                  ariaLabel={t("closeMenu")}
+                />
+                <ThemeToggle />
+              </HeaderContainerStyled>
+              <LanguageContainer>
+                <Switch
+                  selected={locale !== "es"}
+                  optionOne="English"
+                  optionTwo="Spanish"
+                  onClick={handleLanguage}
+                />
+              </LanguageContainer>
+              {sections.map(({ id, labelKey }) => (
+                <LinkMobile
+                  key={id}
+                  href={`#${id}`}
+                  active={id === activeSection}
+                  aria-current={id === activeSection ? "page" : undefined}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    handleOnClick(id);
+                  }}
+                >
+                  {t(labelKey)}
+                </LinkMobile>
+              ))}
+            </SideBarStyled>
+          </>,
+          document.body
+        )
+      : null;
+
+  return (
+    <>
+      <LinksContainerStyled>
+        <IconButton
+          onClick={() => setOpen(true)}
+          type="secondary"
+          icon={IconHamburger}
+          ariaLabel={t("openMenu")}
+        />
+      </LinksContainerStyled>
+      {drawer}
+    </>
+  );
+};
+
+export default HeaderMobile;

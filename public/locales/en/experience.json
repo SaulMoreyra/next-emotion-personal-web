@@ -1,0 +1,20 @@
+{
+  "label": "Experience",
+  "title": "Companies I've worked with",
+  "description": "A track record across fintech, logistics, startups, public sector, and education.",
+  "showMore": "Show earlier experience",
+  "showLess": "Show less",
+  "entries": {
+    "zenfi": "Tech Lead on Mexico's #1 financial health mobile app (credit bureau, SAT, AI expenses). Tamagui, Reanimated, and Skia for UI and animations; dark mode, unified design system, and animated score gauge with Expo, React Native, and TypeScript.",
+    "amoofy": "Contributed to Amoofy's MVP: frontend architecture with Vite, React, and Tailwind CSS, responsive interfaces, and rapid user-centered delivery.",
+    "keep": "Fullstack at Keep (Canadian fintech): internal tooling, structured ledger, bulk migrations with Prisma, Next.js, PostgreSQL, GraphQL, and tRPC.",
+    "skydropx": "Migrated jQuery to Next.js, SSR for SEO, Tienda Nube and Shopify integrations, UI with Material-UI and Styled Components.",
+    "fintecimal": "Fullstack React/Node development for financial solutions and digital products.",
+    "coneval": "Fullstack React/Spring development for public-sector platforms.",
+    "nestle": "React development for a user registration and management platform.",
+    "tekton": "Android development for a census registration app.",
+    "bancoForjadores": "Android development and image capture library for a banking application.",
+    "get": "Fullstack React/Node development on consulting projects.",
+    "ito": "Student Conciliation Secretary for the Computer Systems Engineering representative group. Guest lecturer in Data Structures."
+  }
+}

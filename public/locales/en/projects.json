@@ -1,0 +1,31 @@
+{
+  "label": "Projects",
+  "title": "Selected work",
+  "description": "Products and systems where I've made a meaningful impact.",
+  "featuredLabel": "Featured",
+  "zenfiPreviewAlt": "Zenfi app screenshot showing credit score dashboard",
+  "liveDemo": "Live demo",
+  "sourceCode": "Source code",
+  "entries": {
+    "zenfi": {
+      "title": "Zenfi App",
+      "description": "Mexico's leading financial health app: credit bureau, SAT, AI expenses, and card tracking. I contributed with Tamagui, Reanimated, and Skia — dark mode, animated score gauge, unified design system, and fluid UX with Expo and TypeScript."
+    },
+    "keepLedger": {
+      "title": "Ledger System — Keep",
+      "description": "Structured ledger for financial operations, bulk migration scripts, and internal tooling with Prisma, GraphQL, and tRPC."
+    },
+    "skydropxIntegrations": {
+      "title": "E-commerce Hub — Skydropx",
+      "description": "Tienda Nube and Shopify integrations, Next.js migration with SSR, and performance improvements for the logistics platform."
+    },
+    "amoofy": {
+      "title": "Amoofy MVP",
+      "description": "MVP frontend with Vite, React, and Tailwind. Responsive interfaces and maintainable architecture for early product validation."
+    },
+    "portfolio": {
+      "title": "Personal Portfolio",
+      "description": "This site: Next.js, Emotion, ES/EN i18n, dark mode, and a design focused on professional storytelling."
+    }
+  }
+}

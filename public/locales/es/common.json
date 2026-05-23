@@ -1,6 +1,14 @@
 {
   "home": "Inicio",
-  "about": "Sobre mi",
+  "about": "Sobre mí",
   "experience": "Experiencia",
-  "contact": "Contactame"
+  "projects": "Proyectos",
+  "skills": "Skills",
+  "contact": "Contacto",
+  "skipToContent": "Saltar al contenido",
+  "openMenu": "Abrir menú",
+  "closeMenu": "Cerrar menú",
+  "switchToLight": "Cambiar a modo claro",
+  "switchToDark": "Cambiar a modo oscuro",
+  "logoHome": "Ir al inicio"
 }

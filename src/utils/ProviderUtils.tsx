@@ -1,15 +1,17 @@
 import { ProviderProps } from "interfaces/Provider";
-import React from "react";
+import React, { ReactElement, ReactNode } from "react";
 
 export const convine = (
-  ...providers: Array<(props: ProviderProps) => React.ReactElement>
+  ...providers: Array<(props: ProviderProps) => ReactElement>
 ) => {
-  return ({ children }: { children: React.ReactElement }) => {
+  return ({ children }: { children: ReactNode }) => {
     return providers.reduceRight(
       (child, Provider) => <Provider>{child}</Provider>,
-      children
+      children as ReactElement
     );
   };
 };
 
-export default { convine };
+const ProviderUtils = { convine };
+
+export default ProviderUtils;
