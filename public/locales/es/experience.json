@@ -5,7 +5,7 @@
   "showMore": "Ver experiencia anterior",
   "showLess": "Ver menos",
   "entries": {
-    "zenfi": "Tech Lead en la app móvil de salud financiera #1 en México (Buró, SAT, gastos con IA). Migración a dark mode, sistema de colores unificado, estandarización de código y animaciones más fluidas con Expo, React Native y TypeScript.",
+    "zenfi": "Tech Lead en la app móvil de salud financiera #1 en México (Buró, SAT, gastos con IA). Tamagui, Reanimated y Skia para UI y animaciones; dark mode, design system unificado y gauge de score con Expo, React Native y TypeScript.",
     "amoofy": "Colaboré en el MVP de Amoofy: arquitectura frontend con Vite, React y Tailwind CSS, interfaces responsivas y entrega rápida orientada al usuario.",
     "keep": "Fullstack en Keep (fintech canadiense): tooling interno, ledger estructurado, migraciones masivas con Prisma, Next.js, PostgreSQL, GraphQL y tRPC.",
     "skydropx": "Migración de jQuery a Next.js, SSR para SEO, integraciones con Tienda Nube y Shopify, UI con Material-UI y Styled Components.",

@@ -1,31 +1,27 @@
-import {
-  MockupWrap,
-  PhoneCard,
-  PhoneCardAccent,
-  PhoneCardLine,
-  PhoneMockup,
-  PhoneScreen,
-  PhoneStatusBar,
-} from "./PhoneMockup.styled";
+"use client";
 
-const ZenfiPhoneMockup = () => {
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { MockupWrap, PhoneBezel, PhoneScreen } from "./PhoneMockup.styled";
+
+const ZenfiPreview = () => {
+  const t = useTranslations("projects");
+
   return (
-    <MockupWrap aria-hidden>
-      <PhoneMockup>
+    <MockupWrap>
+      <PhoneBezel>
         <PhoneScreen>
-          <PhoneStatusBar>
-            <span>9:41</span>
-            <span>Zenfi</span>
-          </PhoneStatusBar>
-          <PhoneCard>
-            <PhoneCardLine $wide />
-            <PhoneCardLine />
-            <PhoneCardAccent />
-          </PhoneCard>
+          <Image
+            src="/images/projects/zenfi-preview.jpg"
+            alt={t("zenfiPreviewAlt")}
+            width={472}
+            height={1024}
+            sizes="(max-width: 768px) 220px, 280px"
+          />
         </PhoneScreen>
-      </PhoneMockup>
+      </PhoneBezel>
     </MockupWrap>
   );
 };
 
-export default ZenfiPhoneMockup;
+export default ZenfiPreview;

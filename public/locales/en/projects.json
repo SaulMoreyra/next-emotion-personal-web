@@ -3,12 +3,13 @@
   "title": "Selected work",
   "description": "Products and systems where I've made a meaningful impact.",
   "featuredLabel": "Featured",
+  "zenfiPreviewAlt": "Zenfi app screenshot showing credit score dashboard",
   "liveDemo": "Live demo",
   "sourceCode": "Source code",
   "entries": {
     "zenfi": {
       "title": "Zenfi App",
-      "description": "Mexico's leading financial health app: credit bureau reports, SAT tax info, AI-powered expense tracking, and credit card monitoring — all from your phone. I contributed to the mobile app (Expo/React Native) by migrating to dark mode, standardizing the color system and team codebase, and shipping smoother UX animations."
+      "description": "Mexico's leading financial health app: credit bureau, SAT, AI expenses, and card tracking. I contributed with Tamagui, Reanimated, and Skia — dark mode, animated score gauge, unified design system, and fluid UX with Expo and TypeScript."
     },
     "keepLedger": {
       "title": "Ledger System — Keep",

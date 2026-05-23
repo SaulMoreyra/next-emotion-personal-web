@@ -3,12 +3,13 @@
   "title": "Trabajo destacado",
   "description": "Productos y sistemas en los que he contribuido de forma significativa.",
   "featuredLabel": "Destacado",
+  "zenfiPreviewAlt": "Captura de la app Zenfi mostrando calificación crediticia",
   "liveDemo": "Ver demo",
   "sourceCode": "Código fuente",
   "entries": {
     "zenfi": {
       "title": "App Zenfi",
-      "description": "App de salud financiera líder en México: consulta tu Buró de Crédito, información del SAT, control de gastos con IA y seguimiento de tarjetas — todo desde el celular. Contribuí en la app móvil (Expo/React Native) migrando a dark mode, estandarizando colores y código del equipo, e implementando animaciones más fluidas en la experiencia."
+      "description": "App de salud financiera líder en México: Buró de Crédito, SAT, gastos con IA y seguimiento de tarjetas. Contribuí en la app móvil con Tamagui, Reanimated y Skia — dark mode, gauge de score animado, design system unificado y animaciones fluidas con Expo y TypeScript."
     },
     "keepLedger": {
       "title": "Sistema de Ledger — Keep",

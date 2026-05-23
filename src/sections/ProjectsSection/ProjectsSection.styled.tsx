@@ -51,22 +51,31 @@ export const FeaturedMeta = styled.div(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   gap: theme.spacing(2),
-  minWidth: "200px",
+  alignItems: "flex-start",
+}));
+
+export const FeaturedLayout = styled.div(({ theme }) => ({
+  display: "grid",
+  gap: theme.spacing(4),
   alignItems: "center",
-  textAlign: "center",
+  width: "100%",
   [media.up("md")]: {
-    alignItems: "flex-end",
-    textAlign: "right",
+    gridTemplateColumns: "minmax(0, 1fr) auto",
+    gap: theme.spacing(6),
   },
 }));
 
-export const FeaturedVisual = styled.div(({ theme }) => ({
+export const FeaturedContent = styled.div(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
-  alignItems: "center",
   gap: theme.spacing(3),
+}));
+
+export const FeaturedPreview = styled.div(({ theme }) => ({
+  display: "flex",
+  justifyContent: "center",
   [media.up("md")]: {
-    alignItems: "flex-end",
+    justifyContent: "flex-end",
   },
 }));
 

@@ -10,7 +10,14 @@ export const projects: ProjectEntry[] = [
   {
     id: "zenfi",
     featured: true,
-    stack: ["Expo", "React Native", "TypeScript"],
+    stack: [
+      "Expo",
+      "React Native",
+      "TypeScript",
+      "Tamagui",
+      "Reanimated",
+      "Skia",
+    ],
     href: "https://www.zenfi.mx/",
   },
   {

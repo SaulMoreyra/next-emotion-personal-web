@@ -18,7 +18,7 @@ const PersonJsonLd = ({ locale, name, jobTitle, description }: Props) => {
     jobTitle,
     description,
     url: siteUrl,
-    image: `${siteUrl}/images/profile.svg`,
+    image: `${siteUrl}/images/profile.jpg`,
     sameAs: socialLinksData.map((link) => link.href),
     address: {
       "@type": "PostalAddress",

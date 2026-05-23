@@ -1,7 +1,7 @@
 "use client";
 
 import Reveal from "components/Reveal";
-import ZenfiPhoneMockup from "components/PhoneMockup";
+import ZenfiPreview from "components/PhoneMockup";
 import {
   Section,
   SectionDescription,
@@ -27,7 +27,9 @@ import {
   FeaturedDescription,
   FeaturedLink,
   CompactIndex,
-  FeaturedVisual,
+  FeaturedLayout,
+  FeaturedContent,
+  FeaturedPreview,
 } from "./ProjectsSection.styled";
 
 const ProjectsSection = () => {
@@ -51,32 +53,36 @@ const ProjectsSection = () => {
               return (
                 <Reveal key={project.id} delay={index * 80}>
                   <ProjectCard $featured>
-                    <FeaturedBody>
-                      <FeaturedLabel>{t("featuredLabel")}</FeaturedLabel>
-                      <FeaturedTitle>
-                        {t(`entries.${project.id}.title`)}
-                      </FeaturedTitle>
-                      <FeaturedDescription>
-                        {t(`entries.${project.id}.description`)}
-                      </FeaturedDescription>
-                    </FeaturedBody>
-                    <FeaturedVisual>
-                      <ZenfiPhoneMockup />
-                      <FeaturedMeta>
-                        <StackList>
-                          {project.stack.map((tech) => (
-                            <StackChip key={tech} $featured>
-                              {tech}
-                            </StackChip>
-                          ))}
-                        </StackList>
-                        {project.href && (
-                          <FeaturedLink href={project.href} target="_blank">
-                            {t("liveDemo")} →
-                          </FeaturedLink>
-                        )}
-                      </FeaturedMeta>
-                    </FeaturedVisual>
+                    <FeaturedLayout>
+                      <FeaturedContent>
+                        <FeaturedBody>
+                          <FeaturedLabel>{t("featuredLabel")}</FeaturedLabel>
+                          <FeaturedTitle>
+                            {t(`entries.${project.id}.title`)}
+                          </FeaturedTitle>
+                          <FeaturedDescription>
+                            {t(`entries.${project.id}.description`)}
+                          </FeaturedDescription>
+                        </FeaturedBody>
+                        <FeaturedMeta>
+                          <StackList>
+                            {project.stack.map((tech) => (
+                              <StackChip key={tech} $featured>
+                                {tech}
+                              </StackChip>
+                            ))}
+                          </StackList>
+                          {project.href && (
+                            <FeaturedLink href={project.href} target="_blank">
+                              {t("liveDemo")} →
+                            </FeaturedLink>
+                          )}
+                        </FeaturedMeta>
+                      </FeaturedContent>
+                      <FeaturedPreview>
+                        <ZenfiPreview />
+                      </FeaturedPreview>
+                    </FeaturedLayout>
                   </ProjectCard>
                 </Reveal>
               );
