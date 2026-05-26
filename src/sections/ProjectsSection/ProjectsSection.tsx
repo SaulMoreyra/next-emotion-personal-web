@@ -20,6 +20,8 @@ import {
   ProjectLinks,
   StackList,
   StackChip,
+  FeaturedBand,
+  FeaturedInner,
   FeaturedBody,
   FeaturedMeta,
   FeaturedLabel,
@@ -34,6 +36,8 @@ import {
 
 const ProjectsSection = () => {
   const t = useTranslations("projects");
+  const featuredProject = projects.find((project) => project.featured);
+  const compactProjects = projects.filter((project) => !project.featured);
   let compactIndex = 0;
 
   return (
@@ -46,48 +50,50 @@ const ProjectsSection = () => {
             <SectionDescription>{t("description")}</SectionDescription>
           </SectionHeader>
         </Reveal>
+      </SectionInner>
 
+      {featuredProject && (
+        <Reveal delay={80}>
+          <FeaturedBand>
+            <FeaturedInner>
+              <FeaturedLayout>
+                <FeaturedContent>
+                  <FeaturedBody>
+                    <FeaturedLabel>{t("featuredLabel")}</FeaturedLabel>
+                    <FeaturedTitle>
+                      {t(`entries.${featuredProject.id}.title`)}
+                    </FeaturedTitle>
+                    <FeaturedDescription>
+                      {t(`entries.${featuredProject.id}.description`)}
+                    </FeaturedDescription>
+                  </FeaturedBody>
+                  <FeaturedMeta>
+                    <StackList>
+                      {featuredProject.stack.map((tech) => (
+                        <StackChip key={tech} $featured>
+                          {tech}
+                        </StackChip>
+                      ))}
+                    </StackList>
+                    {featuredProject.href && (
+                      <FeaturedLink href={featuredProject.href} target="_blank">
+                        {t("liveDemo")} →
+                      </FeaturedLink>
+                    )}
+                  </FeaturedMeta>
+                </FeaturedContent>
+                <FeaturedPreview>
+                  <ZenfiPreview />
+                </FeaturedPreview>
+              </FeaturedLayout>
+            </FeaturedInner>
+          </FeaturedBand>
+        </Reveal>
+      )}
+
+      <SectionInner>
         <ProjectsGrid>
-          {projects.map((project, index) => {
-            if (project.featured) {
-              return (
-                <Reveal key={project.id} delay={index * 80}>
-                  <ProjectCard $featured>
-                    <FeaturedLayout>
-                      <FeaturedContent>
-                        <FeaturedBody>
-                          <FeaturedLabel>{t("featuredLabel")}</FeaturedLabel>
-                          <FeaturedTitle>
-                            {t(`entries.${project.id}.title`)}
-                          </FeaturedTitle>
-                          <FeaturedDescription>
-                            {t(`entries.${project.id}.description`)}
-                          </FeaturedDescription>
-                        </FeaturedBody>
-                        <FeaturedMeta>
-                          <StackList>
-                            {project.stack.map((tech) => (
-                              <StackChip key={tech} $featured>
-                                {tech}
-                              </StackChip>
-                            ))}
-                          </StackList>
-                          {project.href && (
-                            <FeaturedLink href={project.href} target="_blank">
-                              {t("liveDemo")} →
-                            </FeaturedLink>
-                          )}
-                        </FeaturedMeta>
-                      </FeaturedContent>
-                      <FeaturedPreview>
-                        <ZenfiPreview />
-                      </FeaturedPreview>
-                    </FeaturedLayout>
-                  </ProjectCard>
-                </Reveal>
-              );
-            }
-
+          {compactProjects.map((project, index) => {
             compactIndex += 1;
 
             return (

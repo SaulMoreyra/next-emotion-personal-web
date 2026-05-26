@@ -5,10 +5,12 @@ export const SkillsWrap = styled.div(({ theme }) => ({
   backgroundColor: theme.isDark ? theme.surface.elevated : theme.surface.default,
   borderTop: `1px solid ${theme.surface.border}`,
   borderBottom: `1px solid ${theme.surface.border}`,
-  marginLeft: `calc(-1 * max(24px, (100vw - 1100px) / 2))`,
-  marginRight: `calc(-1 * max(24px, (100vw - 1100px) / 2))`,
+  marginLeft: -24,
+  marginRight: -24,
   padding: theme.spacing(8, 3),
   [media.up("md")]: {
+    marginLeft: -48,
+    marginRight: -48,
     padding: theme.spacing(10, 6),
   },
 }));

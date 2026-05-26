@@ -8,21 +8,21 @@ export const MockupWrap = styled.div({
   width: "100%",
 });
 
-export const PhoneBezel = styled.div(({ theme }) => ({
+export const PhoneBezel = styled.div({
   width: "220px",
   flexShrink: 0,
   borderRadius: "32px",
   padding: "10px",
   backgroundColor: "#0A0A0A",
   border: "2px solid rgba(0,0,0,0.25)",
-  boxShadow: "0 28px 56px rgba(0,0,0,0.22)",
+  boxShadow: "0 28px 56px rgba(0, 0, 0, 0.22)",
   [media.up("md")]: {
-    width: "280px",
+    width: "260px",
   },
   [media.up("lg")]: {
-    width: "300px",
+    width: "280px",
   },
-}));
+});
 
 export const PhoneScreen = styled.div({
   borderRadius: "24px",
