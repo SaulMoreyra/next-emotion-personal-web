@@ -4,44 +4,73 @@ import { media } from "theme/media";
 export const ProjectsGrid = styled.div(({ theme }) => ({
   display: "grid",
   gap: theme.spacing(3),
+  marginTop: theme.spacing(6),
   [media.up("md")]: {
     gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
     gridAutoRows: "minmax(180px, auto)",
   },
 }));
 
-export const ProjectCard = styled.article<{ $featured?: boolean }>(
-  ({ theme, $featured }) => ({
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    gap: theme.spacing(2),
-    transition: "transform 0.2s",
-    ...($featured
-      ? {
-          gridColumn: "1 / -1",
-          backgroundColor: theme.primary.main,
-          color: theme.black,
-          borderRadius: theme.spacing(2),
-          padding: theme.spacing(5, 6),
-          [media.up("md")]: {
-            flexDirection: "row",
-            alignItems: "flex-start",
-            gap: theme.spacing(6),
-          },
-        }
-      : {
-          padding: theme.spacing(3, 0),
-          borderBottom: `1px solid ${theme.surface.border}`,
-          "&:hover": {
-            borderColor: theme.primary.dark,
-          },
-        }),
-  })
-);
+export const FeaturedBand = styled.div(({ theme }) => ({
+  backgroundColor: theme.primary.main,
+  color: theme.black,
+  marginLeft: -24,
+  marginRight: -24,
+  padding: theme.spacing(6, 3),
+  [media.up("md")]: {
+    marginLeft: -48,
+    marginRight: -48,
+    padding: theme.spacing(8, 5),
+  },
+}));
+
+export const FeaturedInner = styled.div({
+  maxWidth: "1100px",
+  margin: "0 auto",
+  width: "100%",
+});
+
+export const FeaturedLayout = styled.div(({ theme }) => ({
+  display: "grid",
+  gap: theme.spacing(5),
+  width: "100%",
+  [media.up("md")]: {
+    gridTemplateColumns: "minmax(0, 1fr) auto",
+    alignItems: "center",
+    gap: theme.spacing(8),
+  },
+}));
+
+export const FeaturedContent = styled.div(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: theme.spacing(3),
+  minWidth: 0,
+}));
+
+export const FeaturedPreview = styled.div({
+  display: "flex",
+  justifyContent: "center",
+  width: "100%",
+  [media.up("md")]: {
+    justifyContent: "center",
+    width: "auto",
+  },
+});
+
+export const ProjectCard = styled.article(({ theme }) => ({
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  gap: theme.spacing(2),
+  padding: theme.spacing(3, 0),
+  borderBottom: `1px solid ${theme.surface.border}`,
+  "&:hover": {
+    borderColor: theme.primary.dark,
+  },
+}));
 
 export const FeaturedBody = styled.div(({ theme }) => ({
-  flex: 1,
   display: "flex",
   flexDirection: "column",
   gap: theme.spacing(2),
@@ -52,31 +81,6 @@ export const FeaturedMeta = styled.div(({ theme }) => ({
   flexDirection: "column",
   gap: theme.spacing(2),
   alignItems: "flex-start",
-}));
-
-export const FeaturedLayout = styled.div(({ theme }) => ({
-  display: "grid",
-  gap: theme.spacing(4),
-  alignItems: "center",
-  width: "100%",
-  [media.up("md")]: {
-    gridTemplateColumns: "minmax(0, 1fr) auto",
-    gap: theme.spacing(6),
-  },
-}));
-
-export const FeaturedContent = styled.div(({ theme }) => ({
-  display: "flex",
-  flexDirection: "column",
-  gap: theme.spacing(3),
-}));
-
-export const FeaturedPreview = styled.div(({ theme }) => ({
-  display: "flex",
-  justifyContent: "center",
-  [media.up("md")]: {
-    justifyContent: "flex-end",
-  },
 }));
 
 export const FeaturedLabel = styled.span(({ theme }) => ({
@@ -97,14 +101,16 @@ export const FeaturedDescription = styled.p(({ theme }) => ({
   fontFamily: theme.fonts.body,
   color: theme.black,
   margin: 0,
-  maxWidth: "60ch",
+  maxWidth: "62ch",
+  [media.up("md")]: {
+    maxWidth: "none",
+  },
 }));
 
 export const StackList = styled.div(({ theme }) => ({
   display: "flex",
   flexWrap: "wrap",
   gap: theme.spacing(1),
-  marginTop: "auto",
 }));
 
 export const StackChip = styled.span<{ $featured?: boolean }>(
