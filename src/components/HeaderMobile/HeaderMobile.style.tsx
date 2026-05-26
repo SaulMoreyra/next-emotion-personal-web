@@ -10,7 +10,7 @@ export const LinksContainerStyled = styled.div(({ theme }) => ({
   gap: theme.spacing(1),
 }));
 
-type SideBarType = {
+type DrawerType = {
   theme?: Theme | undefined;
   as?: ElementType | undefined;
 } & ClassAttributes<HTMLDivElement> &
@@ -18,19 +18,33 @@ type SideBarType = {
     open: boolean;
   };
 
-export const SideBarStyled = styled.div(({ theme, open }: SideBarType) => ({
+export const BottomSheetStyled = styled.div(({ theme, open }: DrawerType) => ({
   position: "fixed" as const,
-  top: 0,
-  right: open ? 0 : "-330px",
+  left: 0,
+  right: 0,
+  bottom: 0,
   zIndex: 1100,
-  width: "300px",
-  height: "100vh",
+  width: "100%",
+  maxHeight: "85vh",
   background: theme?.background,
-  transition: "right 0.35s ease",
+  borderTopLeftRadius: theme?.spacing(3),
+  borderTopRightRadius: theme?.spacing(3),
+  transform: open ? "translateY(0)" : "translateY(100%)",
+  transition: "transform 0.35s cubic-bezier(0.32, 0.72, 0, 1)",
   overflowX: "hidden" as const,
   overflowY: "auto" as const,
-  WebkitBoxShadow: `-10px 0px 29px -14px ${theme?.black}`,
-  boxShadow: `-10px 0px 29px -14px ${theme?.black}`,
+  WebkitOverflowScrolling: "touch" as const,
+  boxShadow: "0 -16px 48px rgba(0, 0, 0, 0.18)",
+  paddingBottom: "env(safe-area-inset-bottom, 0px)",
+}));
+
+export const SheetHandle = styled.div(({ theme }) => ({
+  width: "40px",
+  height: "4px",
+  borderRadius: "999px",
+  backgroundColor: theme?.isDark ? theme?.surface.border : theme?.primary.dark,
+  margin: `${theme?.spacing(1.5)} auto ${theme?.spacing(1)}`,
+  flexShrink: 0,
 }));
 
 export const SideContainerItemStyled = styled.div(({ theme }) => ({
@@ -49,20 +63,24 @@ export const HeaderContainerStyled = styled(SideContainerItemStyled)(
 
 export const LanguageContainer = styled(SideContainerItemStyled)(
   ({ theme }) => ({
-    margin: theme.spacing(2, 0),
+    margin: theme.spacing(1, 0, 2),
     padding: theme?.spacing(0, 4),
   })
 );
 
-type BackdropType = SideBarType;
+export const NavLinks = styled.nav(({ theme }) => ({
+  display: "flex",
+  flexDirection: "column",
+  paddingBottom: theme?.spacing(2),
+}));
+
+type BackdropType = DrawerType;
 export const BakdropStyled = styled.div(({ theme, open }: BackdropType) => ({
-  ...(!open ? { display: "none" as const } : {}),
   position: "fixed" as const,
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
+  inset: 0,
   backgroundColor: theme?.fade(theme.black, 0.45),
   zIndex: 1090,
+  opacity: open ? 1 : 0,
+  ...(open ? { pointerEvents: "auto" as const } : { pointerEvents: "none" as const }),
   transition: "opacity 0.35s ease",
 }));
